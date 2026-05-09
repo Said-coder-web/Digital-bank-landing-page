@@ -1,0 +1,31 @@
+@use "../variables/variables" as *;
+
+/*=== Start About ===*/
+section.about {
+  position: sticky;
+  top: 0;
+
+  @media (max-width: 450px) {
+    text-align: center;
+  }
+  background: $Gray-100;
+  .about-info {
+    p {
+      margin-block: 20px 40px;
+      max-width: 600px;
+    }
+  }
+
+  .cards {
+    .card {
+      img {
+        width: 50px;
+      }
+
+      h3 {
+        margin-block: 20px 15px;
+      }
+    }
+  }
+}
+/*=== End About ===*/

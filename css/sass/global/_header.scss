@@ -1,0 +1,106 @@
+@use "../variables/variables" as *;
+
+/*=== Start Header ===*/
+header {
+  height: 80px;
+  width: 100%;
+  background: $White;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+
+    @media (min-width: 768px) {
+      height: 100%;
+    }
+
+    @media (max-width: 768px) {
+      padding: 20px;
+      width: 100%;
+      position: absolute;
+      top: 80px;
+      background: $White;
+      flex-direction: column;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    a {
+      display: block;
+      color: $Gray-600;
+      font-size: 14px;
+      height: 100%;
+      align-content: center;
+      position: relative;
+
+      @media (max-width: 768px) {
+        padding-block: 10px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+      }
+
+      &:hover::before {
+        width: 100%;
+        background: rgba($color: $Green-500, $alpha: 0.5);
+      }
+      &.active::before {
+        background: $Green-500;
+        width: 100%;
+      }
+    }
+  }
+
+  button {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .bar {
+    width: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}
+/*=== End Header ===*/

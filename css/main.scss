@@ -1,0 +1,10 @@
+@use "./sass/global/global";
+
+// Header
+@use "./sass/global/header";
+// Pages
+@use "./sass/pages/home";
+@use "./sass/pages/about";
+@use "./sass/pages/articals";
+// Footer
+@use "./sass/global/footer";

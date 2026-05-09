@@ -1,0 +1,111 @@
+@use "../variables/variables" as *;
+/*=== Start Home ===*/
+.home {
+  background: $Gray-50;
+  height: calc(100vh - 80px);
+  position: relative;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .home-info {
+      flex: 40%;
+
+      @media (max-width: 768px) {
+        order: 2;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 400;
+        width: 390px;
+      }
+
+      p {
+        margin-block: 20px;
+        width: 390px;
+        line-height: 1.6;
+
+        @media (max-width: 768px) {
+          margin-inline: auto;
+        }
+      }
+    }
+
+    .image {
+      flex: 60%;
+      position: relative;
+      width: 500px;
+      height: 400px;
+      position: relative;
+
+      img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 3;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        filter: drop-shadow(2px 4px 6px gray);
+        -webkit-filter: drop-shadow(2px 4px 6px gray);
+        animation: moveUpDown 2s infinite alternate linear;
+        -webkit-animation: moveUpDown 2s infinite alternate linear;
+        @media (max-width: 768px) {
+          top: 5%;
+        }
+        @media (max-width: 450px) {
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  > img {
+    position: absolute;
+    height: 100%;
+    top: 55%;
+    right: -40%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+
+    &:first-of-type {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+
+      &:first-of-type {
+        display: block;
+        top: 195px;
+        left: 0;
+      }
+    }
+  }
+}
+/*=== End Home ===*/
+
+@keyframes moveUpDown {
+  from {
+    margin-top: 20px;
+  }
+  to {
+    margin-top: -20px;
+  }
+}
